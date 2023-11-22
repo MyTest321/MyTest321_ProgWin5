@@ -1,0 +1,11 @@
+[SearchableFiles.ignore]
+/build
+
+[SearchableFiles.include]
+*
+
+[SourceExplorer.ignore]
+*.dsp
+*.dsw
+*.mak
+*.exe

@@ -1,0 +1,8 @@
+ Programming Windows by Charles Petzold
+ https://www.amazon.com/Programming-Wi...
+ ISBN-13: 978-1572319950
+
+Programming Applications for Microsoft Windows by Jeffrey Richter
+ ISBN-13: 978-1572319967
+ 
+ Programming Server-Side Applications for Microsoft Windows 2000 by Jeffrey Richter

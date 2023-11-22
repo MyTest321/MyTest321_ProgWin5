@@ -1,0 +1,4 @@
+# Microsoft Developer Studio Generated Dependency File, included by HelloMsg.mak
+
+.\HelloMsg.c : \
+	"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Include\BaseTsd.h"
