@@ -120,7 +120,7 @@ void g_setWorkingDir() {
     printf("%s\n", tmp);
 #endif
 
-    static const char* kPrefix = MY_CMAKE_ROOT_DIR"/build/ProgWin5-x86-windows/";
+    static const char* kPrefix = MY_CMAKE_BIN_DIR;
     const size_t kPerfixSize = strlen(kPrefix);
 
     MyStrView path;
@@ -133,15 +133,16 @@ void g_setWorkingDir() {
     MyStrView_print(&dirName);
 #endif
 
-    // F:\books\ProgWin5\build\ProgWin5-windows\Chap03\HelloWin\Debug
     char dirNameBuf[MAX_PATH + 1];
     MyStrView_c_str(&dirName, dirNameBuf, sizeof(dirNameBuf));
 
-    // 1: Chap03\HelloWin\Debug
-    // 2: Chap03\HelloWin\Release
     MyStrView relativePath;
     MyStrView_reset(&relativePath);
-    MyStrView_substr(&relativePath, &dirName, kPerfixSize, dirName.len - kPerfixSize);
+
+    size_t st = kPerfixSize + 1;
+    size_t count = dirName.len - st;
+    MyStrView_substr(&relativePath, &dirName, st, count);
+
 #if _DEBUG
     MyStrView_print(&relativePath);
 #endif
@@ -151,6 +152,7 @@ void g_setWorkingDir() {
 
     char newDir[MAX_PATH + 1];
     snprintf(newDir, sizeof(newDir), "%s/../../../../../%s/../", dirNameBuf, relativePathBuf);
+
 #if _DEBUG
     printf("set current dir: %s\n", newDir);
 #endif
@@ -161,7 +163,6 @@ void g_setWorkingDir() {
     g_getCurrentDir(tmp, sizeof(tmp));
     printf("\ncurrent dir: %s\n", tmp);
 #endif
-
 }
 
 // -------------------------------------------------

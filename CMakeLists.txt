@@ -6,9 +6,8 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 project(ProgWin5)
 
-set(cmake_root_pwd ${CMAKE_CURRENT_SOURCE_DIR})
-
-message("====cmake_root_pwd= ${cmake_root_pwd} ====")
+set(cmake_root_dir ${CMAKE_CURRENT_SOURCE_DIR})
+set(cmake_root_bin_dir ${CMAKE_CURRENT_BINARY_DIR})
 
 set(tmp_src_files "")
 
@@ -28,11 +27,11 @@ function(sge_add_executable target_name src_path)
 	)
 
 	sge_source_group(${src_path} "${src_files}")
-	add_compile_definitions(MY_CMAKE_ROOT_DIR="${cmake_root_pwd}")
+	add_compile_definitions(MY_CMAKE_BIN_DIR="${cmake_root_bin_dir}")
 	add_executable(${target_name}
 		${src_files}
 		${tmp_src_files}
-		${cmake_root_pwd}/main.c
+		${cmake_root_dir}/main.c
 	)
 
 	target_link_libraries(${target_name} PUBLIC
@@ -178,6 +177,48 @@ add_subdirectory(Chap17/Justify1)
 add_subdirectory(Chap17/Justify2)
 add_subdirectory(Chap17/PickFont)
 add_subdirectory(Chap17/UniChars)
+
+add_subdirectory(Chap18/Emf1)
+add_subdirectory(Chap18/Emf2)
+add_subdirectory(Chap18/Emf3)
+add_subdirectory(Chap18/Emf4)
+add_subdirectory(Chap18/Emf5)
+add_subdirectory(Chap18/Emf6)
+add_subdirectory(Chap18/Emf7)
+add_subdirectory(Chap18/Emf8)
+add_subdirectory(Chap18/Emf9)
+add_subdirectory(Chap18/Emf10)
+add_subdirectory(Chap18/Emf11)
+add_subdirectory(Chap18/Emf12)
+add_subdirectory(Chap18/Emf13)
+add_subdirectory(Chap18/EmfView)
+add_subdirectory(Chap18/Metafile)
+
+add_subdirectory(Chap19/MDIDemo)
+
+add_subdirectory(Chap20/BigJob1)
+add_subdirectory(Chap20/BigJob2)
+add_subdirectory(Chap20/Multi1)
+add_subdirectory(Chap20/Multi2)
+add_subdirectory(Chap20/RndRctMT)
+
+add_subdirectory(Chap21/EdrTest)
+add_subdirectory(Chap21/ShowBit)
+add_subdirectory(Chap21/StrProg)
+
+add_subdirectory(Chap22/AddSynth)
+add_subdirectory(Chap22/BachTocc)
+add_subdirectory(Chap22/Drum)
+add_subdirectory(Chap22/KBMidi)
+add_subdirectory(Chap22/Record1)
+add_subdirectory(Chap22/Record2)
+add_subdirectory(Chap22/Record3)
+add_subdirectory(Chap22/SineWave)
+add_subdirectory(Chap22/TestMci)
+add_subdirectory(Chap22/WakeUp)
+
+add_subdirectory(Chap23/NetTime)
+add_subdirectory(Chap23/UpdDemo)
 
 #set_property (DIRECTORY PROPERTY VS_STARTUP_PROJECT HelloWin)
 
